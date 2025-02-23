@@ -1,0 +1,34 @@
+#+TITLE: Progreso Semanal
+#+AUTHOR: Nicolás Recinella Vidán
+#+DATE: 23/02/2025
+
+
+* Resumen
+
+# Resuma brevemente el informe en 1-2 párrafos aquí. Este resumen debe
+# describir en forma concreta los objetivos actuales. Es posible que
+# quieras vincular a un archivo de proyecto que describe los objetivos
+# del proyecto.
+
+
+ Se ha realizado un script python que reparte cartas, se crea una función que recibe
+ como parámetros el número de cartas, el número de cartas totales y el número de cartas que recibe cada
+ jugador. Está función retorna las cartas señaladas como un entero que recibe cada jugador.
+ Esto se ha hecho usando la función shuffle de la librería random.
+
+
+* Resultados y discusión de la semana pasada
+
+
+ Ejecutado el programa del repositorio GitHub con python 3.12 ya que no se ha podido instalar la version 3.11.
+
+
+
+
+* Estado actual
+ 
+ Tenemos una función que reparte n cartas a m jugadores, también se ha avanzado en la lectura del libro y de la
+ memoria del TFG.
+
+
+ 
