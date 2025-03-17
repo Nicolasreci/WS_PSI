@@ -1,0 +1,19 @@
+#+TITLE: Progreso Semanal
+#+AUTHOR: Nicolás Recinella Vidán
+#+DATE: 16/03/2025
+
+
+* Resumen
+
+# Resuma brevemente el informe en 1-2 párrafos aquí. Este resumen debe
+# describir en forma concreta los objetivos actuales. Es posible que
+# quieras vincular a un archivo de proyecto que describe los objetivos
+# del proyecto.
+
+Se ha estudiado el programa albatross en c++
+
+
+* Estado actual
+ 
+He leído la documentación del TFG "Distributed Random Beacons" y se ha hecho la ejecución
+del programa de albatross en c++.
