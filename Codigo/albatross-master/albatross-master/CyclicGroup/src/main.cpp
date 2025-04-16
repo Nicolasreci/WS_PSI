@@ -159,15 +159,15 @@ int main(int argc, char *argv[]) {
   }
 
   if (ffte) {
-    cout << "execution of ffte\n\n";
+    //cout << "execution of ffte\n\n";
     long k = 128;
     long l = size - k;
     ZZ p,q;
     findprime(q,p,k,l);
-    cout << "q = " << q << "  p = " << p << endl;
+    //cout << "q = " << q << "  p = " << p << endl;
     ZZ w;
     rootunity(w,n,q);
-    cout << "w = " << w << endl;
+    //cout << "w = " << w << endl;
     ZZ_p::init(p);
     ZZ_p h {4};
     Vec<ZZ_p> L, coef;
@@ -181,9 +181,10 @@ int main(int argc, char *argv[]) {
     clock_t FFTE_time = clock();
     FFTE(f,n,L,w,q);
     FFTE_time = clock() - FFTE_time;
-    cout << "f = " << f << endl;
-    cout << "correct ? " << test(f,coef,h,w,n,q) << endl;
-    cout << "time: " << (float)FFTE_time/CLOCKS_PER_SEC << "s" << endl;
+    //cout << "f = " << f << endl;
+    cout << f << endl;
+    //cout << "correct ? " << test(f,coef,h,w,n,q) << endl;
+    //cout << "time: " << (float)FFTE_time/CLOCKS_PER_SEC << "s" << endl;
   }
 
   /////////////////////////////////////////////////////////////////////// return

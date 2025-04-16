@@ -1,0 +1,13 @@
+#+TITLE: Progreso Semanal
+#+AUTHOR: Nicolás Recinella Vidán
+#+DATE: 16/04/2025
+
+
+* Resumen
+
+Se ha implementado la ejecución del programa albatross en el código original
+
+
+* Estado actual
+ 
+Se ha hecho una función que ejecuta el programa albatross con c++ y filtra por los primeros n números los cuales han sido usados para el seed de la librería Random de python (solo funciona con la wsl), también he avanzado con la memoria añadiendo las bibliografías y completando informacion básica como el resumen entre otros.

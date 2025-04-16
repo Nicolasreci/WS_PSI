@@ -16,4 +16,6 @@ Se ha estudiado el programa albatross en c++
 * Estado actual
  
 He leído la documentación del TFG "Distributed Random Beacons" y se ha hecho la ejecución
-del programa de albatross en c++.
+del programa de albatross en c++. Se le solicita a Domingo que me mande la plantilla de la memoria
+
+Mirar trabajo Albina y ver palabras claves TFG
