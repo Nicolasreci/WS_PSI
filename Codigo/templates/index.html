@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Dealer</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        form { margin-bottom: 20px; }
+        label { margin-right: 10px; }
+        select, input { margin-right: 20px; }
+        .deck, #player-hand { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+        .deck div, #player-hand div { width: 40px; height: 60px; border: 1px solid #333; display: flex; align-items: center; justify-content: center; }
+        .player-buttons { margin-bottom: 20px; }
+        button { padding: 5px 10px; margin-right: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Card Dealer</h1>
+
+    <form method="POST">
+        <label for="deck">Deck Type:</label>
+        <select id="deck" name="deck">
+            {% for deck in decks %}
+                <option value="{{ deck }}" {% if deck == selected_deck %}selected{% endif %}>{{ deck }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="num_players">Number of Players:</label>
+        <input type="number" id="num_players" name="num_players" min="1" value="{{ num_players }}" required>
+
+        <label for="cards_per_player">Cards per Player:</label>
+        <input type="number" id="cards_per_player" name="cards_per_player" min="1" value="{{ cards_per_player }}" required>
+
+        <button type="submit">Deal</button>
+    </form>
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    <h2>Deck ({{ total_cards }} cards)</h2>
+    <div class="deck">
+        {% for card in range(1, total_cards + 1) %}
+            <div>{{ card }}</div>
+        {% endfor %}
+    </div>
+
+    {% if hands %}
+        <div class="player-buttons">
+            <h2>Select a Player to View Their Hand</h2>
+            {% for i in range(hands|length) %}
+                <button type="button" onclick="showHand({{ i }})">Player {{ i + 1 }}</button>
+            {% endfor %}
+        </div>
+
+        <div id="player-hand"></div>
+
+        <script>
+            // Pass the hands data into JS
+            const playerHands = JSON.parse('{{ hands|tojson|safe }}');
+            function showHand(index) {
+                const container = document.getElementById('player-hand');
+                container.innerHTML = '';  // clear prior
+                playerHands[index].forEach(card => {
+                    const div = document.createElement('div');
+                    div.textContent = card;
+                    container.appendChild(div);
+                });
+            }
+        </script>
+    {% endif %}
+
+    
+
+</body>
+</html>

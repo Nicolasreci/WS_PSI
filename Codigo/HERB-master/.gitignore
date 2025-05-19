@@ -1,0 +1,10 @@
+debug
+.idea
+
+go.sum
+bots
+
+vendor
+node0_config
+nodeArray.txt
+

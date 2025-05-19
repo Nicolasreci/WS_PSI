@@ -3,8 +3,9 @@ import os
 import subprocess
 
 
-def repartir_cartas(total_cartas, num_jugadores, cartas_por_jugador):
+def repartir_cartas(total_cartas, num_jugadores, cartas_por_jugador, semilla):
     # Comprobamos que haya suficientes cartas para repartir
+    random.seed(semilla)
     if num_jugadores * cartas_por_jugador > total_cartas:
         raise ValueError("No hay suficientes cartas para repartir.")
     
@@ -41,12 +42,14 @@ def obtener_primeros_n(n):
     # Retornar los primeros n dígitos
     return salida_continua[:n]
 
-# Ejemplo de uso:
-seed = obtener_primeros_n(10)
-print("Semilla obtenida:", seed)
-random.seed(seed)  # Establecer la semilla para la aleatoriedad
-num_jugadores = 4
-cartas_por_jugador = 5
-total_cartas = 52
-manos = repartir_cartas(total_cartas, num_jugadores, cartas_por_jugador)
-print("Manos repartidas:", manos)
+def main():
+    seed = obtener_primeros_n(10)
+    print("Semilla obtenida:", seed)
+    random.seed(seed)  # Establecer la semilla para la aleatoriedad
+    num_jugadores = 4
+    cartas_por_jugador = 5
+    total_cartas = 52
+    manos = repartir_cartas(total_cartas, num_jugadores, cartas_por_jugador)
+    print("Manos repartidas:", manos)
+
+#main()
