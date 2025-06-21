@@ -7,7 +7,7 @@ def repartir_cartas(total_cartas, num_jugadores, cartas_por_jugador, semilla):
     # Comprobamos que haya suficientes cartas para repartir
     random.seed(semilla)
     if num_jugadores * cartas_por_jugador > total_cartas:
-        raise ValueError("No hay suficientes cartas para repartir.")
+        raise ValueError("Not enough cards to deal to all players.")
     
     # Creamos una lista de cartas numeradas del 1 al total_cartas
     baraja = list(range(1, total_cartas + 1))
